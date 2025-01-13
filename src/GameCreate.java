@@ -9,7 +9,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Scanner;
 
-public class GameLibrary {
+public class GameCreate {
     public static void main(String[] args) throws IOException{
         Scanner input = new Scanner(System.in);
 
@@ -26,8 +26,6 @@ public class GameLibrary {
 
         input.close();
     }
+
 }   
 
-// TODO: Add method that allows the user to add their own information and description of the game that they input.
-
-// TODO: Create a search tool for the GamesFolder folder so that games can be easier to find.
