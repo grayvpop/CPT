@@ -9,13 +9,13 @@ import java.util.HashSet;
 public class GameOption {
     private String name;
     private HashSet<String> games;
-    private ArrayList<String> users;
+    private HashSet<String> users;
     private ArrayList<String> details;
 
     public GameOption(String name) {
         this.name = name;
         this.games = new HashSet<>();
-        this.users = new ArrayList<>();
+        this.users = new HashSet<>();
         this.details = new ArrayList<>();
     }
 
@@ -66,8 +66,12 @@ public class GameOption {
     }
 
     public void addUser(String user) {
-        users.add(user);
-        System.out.println(user + " registered");
+        if (users.contains(user)){
+            System.out.println(user + " is taken");
+        } else {
+            users.add(user);
+            System.out.println(user + " registered");
+        }
     }
 
     public void viewUsers() {

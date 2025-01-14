@@ -28,8 +28,9 @@ public class GameMain {
             System.out.println("3. View users");
             System.out.println("4. Search for a game");
             System.out.println("5. Add details for a game");
-            System.out.println("6. Add game to library");
-            System.out.println("7. Exit");
+            System.out.println("6. Add new user");
+            System.out.println("7. Add game to library");
+            System.out.println("8. Exit");
             System.out.print("Select option: ");
 
             int option = input.nextInt();
@@ -67,12 +68,18 @@ public class GameMain {
                     break;
 
                 case 6:
+                    System.out.print("input new user: ");
+                    String additionalUser = input.nextLine();
+                    library.addUser(additionalUser);
+                    break;
+
+                case 7:
                     System.out.print("What game would you like to add: ");
                     String additionalGame = input.nextLine();
                     library.addGame(additionalGame);
                     break;
                     
-                case 7:
+                case 8:
                     System.out.print("I hope you had an amazing time. :)");
                     list = false;
                     break;
