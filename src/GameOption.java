@@ -4,16 +4,19 @@
  */
 
  import java.util.ArrayList;
+import java.util.HashSet;
 
 public class GameOption {
     private String name;
-    private ArrayList<String> games;
+    private HashSet<String> games;
     private ArrayList<String> users;
+    private ArrayList<String> details;
 
     public GameOption(String name) {
         this.name = name;
-        this.games = new ArrayList<>();
+        this.games = new HashSet<>();
         this.users = new ArrayList<>();
+        this.details = new ArrayList<>();
     }
 
     public String getName() {
@@ -21,8 +24,12 @@ public class GameOption {
     }
 
     public void addGame(String game) {
-        games.add(game);
-        System.out.println(game + " was added");
+        if (games.contains(game)) {
+            System.out.println(game + " already exists within this library");
+        } else {
+            games.add(game);
+            System.out.println(game + " was added");
+        }
     }
 
     public void viewLibrary() {
@@ -34,14 +41,23 @@ public class GameOption {
 
     public void viewGame(String game) {
         if (games.contains(game)) {
-            System.out.println("Details for game: " + game);
+            System.out.println("Details for game: " + details);
         } else {
             System.out.println("Game is not in the library =/");
 
         }
     }
 
-    public void searchGme(String game) {
+    public void checkGame(String game) {
+        if (games.contains(game)) {
+            System.out.println("Game is in library");
+        } else {
+            System.out.println("Game is not in the library =/");
+
+        }
+    }
+
+    public void searchGame(String game) {
         if (games.contains(game)) {
             System.out.println(game + " is in the library");
         } else {
@@ -59,5 +75,10 @@ public class GameOption {
         for (String user : users) {
             System.out.println("- " + user);
         }
+    }
+
+    public void addDetails(String detail) {
+        details.add(detail);
+        System.out.println("Add description: " + detail);
     }
 }
