@@ -19,10 +19,20 @@ public class GameOption {
         this.details = new ArrayList<>();
     }
 
+
+    /**
+     * Gets the name of the library.
+     * @return The name of the library.
+    */
     public String getName() {
         return name;
     }
 
+
+    /**
+     * Adds a game into a list
+     * @param game - outputs whether a game is added or already exists
+     */
     public void addGame(String game) {
         if (games.contains(game)) {
             System.out.println(game + " already exists within this library");
@@ -32,13 +42,22 @@ public class GameOption {
         }
     }
 
+      /**
+     * Views the list of games inputted into the array.
+     * @param game - outputs the games inputted by recency.
+     */
     public void viewLibrary() {
-        System.out.println("Games in " + name + ":");
+        System.out.println("Games in the library: ");
         for (String game : games) {
             System.out.println("- " + game);
         }
     }
 
+
+      /**
+     * Views the list of games and inputted details attached.
+     * @param game - outputs the details of the game.
+     */
     public void viewGame(String game) {
         if (games.contains(game)) {
             System.out.println("Details for game: " + details);
@@ -48,6 +67,10 @@ public class GameOption {
         }
     }
 
+      /**
+     *Checks if a game is inside the library. 
+     * @param game
+     */
     public void checkGame(String game) {
         if (games.contains(game)) {
             System.out.println("Game is in library");
@@ -57,6 +80,10 @@ public class GameOption {
         }
     }
 
+      /**
+     * 
+     * @param game
+     */
     public void searchGame(String game) {
         if (games.contains(game)) {
             System.out.println(game + " is in the library");
@@ -65,6 +92,10 @@ public class GameOption {
         }
     }
 
+      /**
+     * 
+     * @param game
+     */
     public void addUser(String user) {
         if (users.contains(user)){
             System.out.println(user + " is taken");
@@ -74,6 +105,10 @@ public class GameOption {
         }
     }
 
+      /**
+     * 
+     * @param game
+     */
     public void viewUsers() {
         System.out.println("users:");
         for (String user : users) {
@@ -81,8 +116,12 @@ public class GameOption {
         }
     }
 
+      /**
+     * 
+     * @param game
+     */
     public void addDetails(String detail) {
         details.add(detail);
-        System.out.println("Add description: " + detail);
+        System.out.println("Added description: " + detail);
     }
 }
