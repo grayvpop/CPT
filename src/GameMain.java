@@ -15,7 +15,7 @@ public class GameMain {
         Scanner input = new Scanner(System.in);
 
         GameOption library = new GameOption("Welcome to the GamesLibrary");
-        
+
         System.out.println("Hello please answer the following questions");
 
         System.out.print("Please add a game: ");
@@ -31,7 +31,7 @@ public class GameMain {
         boolean list = true;
 
         while (list) {
-            System.out.println(library.getName() + ", please enjoy your time");
+            System.out.println(library.getName() + ", please enjoy your time,");
             System.out.println("1. View List");
             System.out.println("2. View users");
             System.out.println("3  game descriptions");
