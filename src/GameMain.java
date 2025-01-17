@@ -15,6 +15,8 @@ public class GameMain {
         Scanner input = new Scanner(System.in);
 
         GameOption library = new GameOption("Welcome to the GamesLibrary");
+        
+        System.out.println("Hello please answer the following questions");
 
         System.out.print("Please add a game: ");
         String gameAdd = input.nextLine();
@@ -23,11 +25,13 @@ public class GameMain {
         System.out.print("Please create a user: ");
         String userAdd = input.nextLine();
         library.addUser(userAdd);
+
+        clearScreen();
         
         boolean list = true;
 
         while (list) {
-            System.out.println(library.getName());
+            System.out.println(library.getName() + ", please enjoy your time");
             System.out.println("1. View List");
             System.out.println("2. View users");
             System.out.println("3  game descriptions");
@@ -70,12 +74,15 @@ public class GameMain {
                     clearScreen();
                     System.out.print("Enter game name: ");
                     String gameName2 = input.nextLine();
-                    library.checkGame(gameName2);
-
-                    System.out.print("Enter a description: ");
-                    String details = input.nextLine();
-                    library.addDetails(details);
-                    break;
+                    boolean isFound = library.checkGame(gameName2);
+                    if (isFound == true) {
+                        System.out.print("Enter a description: ");
+                        String details = input.nextLine();
+                        library.addDetails(details);
+                        break;
+                    } else {
+                        break;
+                    }
 
                 case 6:
                     clearScreen();

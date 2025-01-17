@@ -46,10 +46,16 @@ public class GameOption {
      * Views the list of games inputted into the array.
      * @param game - outputs the games inputted by recency.
      */
-    public void viewLibrary() {
-        System.out.println("Games in the library: ");
-        for (String game : games) {
-            System.out.println("- " + game);
+    public boolean viewLibrary() {
+        if (games.isEmpty()) {
+            System.out.println("The library is empty.");
+            return false;
+        } else {
+            System.out.println("Games in the library: ");
+            for (String game : games) {
+                System.out.println("- " + game);
+            }
+            return true;
         }
     }
 
@@ -58,43 +64,47 @@ public class GameOption {
      * Views the list of games and inputted details attached.
      * @param game - outputs the details of the game.
      */
-    public void viewGame(String game) {
+    public boolean viewGame(String game) {
         if (games.contains(game)) {
             System.out.println("Details for game: " + details);
+            return true;
         } else {
             System.out.println("Game is not in the library =/");
-
+            return false;
         }
     }
 
       /**
      *Checks if a game is inside the library. 
-     * @param game
+     * @param game - outputs whether or not the game inputted exists in the list
      */
-    public void checkGame(String game) {
+    public boolean checkGame(String game) {
         if (games.contains(game)) {
             System.out.println("Game is in library");
+            return true;
         } else {
             System.out.println("Game is not in the library =/");
-
+            return false;
         }
     }
 
       /**
-     * 
-     * @param game
+     * Searches the game for a game inside the list
+     * @param game - outputs whether or not the game exists inside the list
      */
-    public void searchGame(String game) {
+    public boolean searchGame(String game) {
         if (games.contains(game)) {
             System.out.println(game + " is in the library");
+            return true;
         } else {
             System.out.println(game + " cannot be found");
+            return false;
         }
     }
 
       /**
-     * 
-     * @param game
+     * Adds a user into a list
+     * @param game - outputs the games inputted by recency.
      */
     public void addUser(String user) {
         if (users.contains(user)){
@@ -106,19 +116,25 @@ public class GameOption {
     }
 
       /**
-     * 
-     * @param game
+     * Views the list of users inputted into the list.
+     * @param game - outputs the list of users.
      */
-    public void viewUsers() {
-        System.out.println("users:");
-        for (String user : users) {
-            System.out.println("- " + user);
+    public boolean viewUsers() {
+        if (users.isEmpty()) {
+            System.out.println("The user list is empty.");
+            return false;
+        } else {
+            System.out.println("Users: ");
+            for (String user : users) {
+                System.out.println("- " + user);
+            }
+            return true;
         }
     }
 
       /**
-     * 
-     * @param game
+     * Adds details into a list
+     * @param game - outputs the details inputted corresponding the game.
      */
     public void addDetails(String detail) {
         details.add(detail);
